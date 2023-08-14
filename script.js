@@ -1,15 +1,29 @@
 const text = document.getElementById("text");
 const btn = document.getElementById("btn");
-const total = document.getElementById("result");
+const result = document.getElementById("result");
 
 
 function calc() {
-    const txt = text.value.split("\n").join(" ").split(" ");
-    const numbers = txt.map(item => Number(item)).filter(item => item);
-    const count = numbers.reduce((total, num) => total + num);
+    const cleanText = text.value.split("\n").join(" ").split(" ");
+    const filterNumbers = cleanText.map(item => Number(item)).filter(item => item);
+    const calcTotal = filterNumbers.reduce((total, num) => total + num);
+    const calcDigits = String(calcTotal).split('').reverse();
 
-    total.innerText = count;
+    let countedCommas = 0;
+    let finalCalc = [];
+
+    calcDigits.forEach(digit => {
+        if (countedCommas === 3) {
+            finalCalc.unshift(`${digit},`);
+            countedCommas = 1;
+        } else {
+            finalCalc.unshift(digit);
+            countedCommas++;
+        }
+    })
+
+    result.innerText = finalCalc.join('');
 }
 
 
-btn.addEventListener('click', calc);
+btn.addEventListener("click", calc);

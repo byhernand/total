@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+    display: grid;
+    place-content: center;
+    gap: 20px;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+.text-container textarea {
+    display: block;
+    margin: 0 auto;
+}
+
+button {
+    padding: 16px 20px;
+    font-size: 1.6rem;
+}
+
+.total {
+    font-size: 1.8rem;
+}
