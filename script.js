@@ -33,6 +33,15 @@ function clear() {
 }
 
 
+function shortcuts(event) {
+    if(event.ctrlKey === true && event.code === 'KeyC') {
+        clear();
+    }
+}
+
+
 countBtn.addEventListener("click", count);
 
 clearBtn.addEventListener("click", clear);
+
+document.addEventListener('keyup', shortcuts);
