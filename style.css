@@ -29,9 +29,29 @@ h1 {
     margin: 0 auto;
 }
 
-button {
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.buttons button {
+    width: 50%;
     padding: 16px 20px;
     font-size: 1.6rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons .count {
+    border: none;
+    background-color: rgb(15, 15, 15);
+    color: #eaeaea;
+}
+
+.buttons .clear {
+    border: none;
+    background-color: #eaeaea;
 }
 
 .total {

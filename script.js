@@ -1,9 +1,10 @@
 const text = document.getElementById("text");
-const btn = document.getElementById("btn");
+const countBtn = document.getElementById("countButton");
+const clearBtn = document.getElementById("clearButton");
 const result = document.getElementById("result");
 
 
-function calc() {
+function count() {
     const cleanText = text.value.split("\n").join(" ").split(" ");
     const filterNumbers = cleanText.map(item => Number(item)).filter(item => item);
     const calcTotal = filterNumbers.reduce((total, num) => total + num);
@@ -26,4 +27,12 @@ function calc() {
 }
 
 
-btn.addEventListener("click", calc);
+function clear() {
+    text.value = "";
+    result.innerText = "";
+}
+
+
+countBtn.addEventListener("click", count);
+
+clearBtn.addEventListener("click", clear);
